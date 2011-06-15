@@ -244,6 +244,8 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/libsmiledetect.so:/system/lib/libsmiledetect.so \
     vendor/motorola/droid2/proprietary/libarcsoft.so:/system/lib/libarcsoft.so \
     vendor/motorola/droid2/proprietary/cdma_droid2-keypad.kcm.bin:/system/usr/keychars/cdma_droid2-keypad.kcm.bin \
+    vendor/motorola/droid2/proprietary/cdma_droid2-keypad.kl:/system/usr/keylayout/cdma_droid2-keypad.kl \
     vendor/motorola/droid2/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \
-    vendor/motorola/droid2/proprietary/qwerty2.kcm.bin:/system/usr/keychars/qwerty2.kcm.bin \
+    vendor/motorola/droid2/proprietary/qwerty2.kcm.bin:/system/usr/keychars/qwerty2.kcm.bin
+
 

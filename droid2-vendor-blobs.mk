@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES := \
     vendor/motorola/droid2/proprietary/libgps_rds.so:obj/lib/libgps_rds.so \
     vendor/motorola/droid2/proprietary/libnmea.so:obj/lib/libnmea.so \
     vendor/motorola/droid2/proprietary/libril_rds.so:obj/lib/libril_rds.so \
+    vendor/motorola/shadow/proprietary/librds_util.so:obj/lib/librds_util.so \
     vendor/motorola/droid2/proprietary/libsmiledetect.so:obj/lib/libsmiledetect.so \
     vendor/motorola/droid2/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so
 
@@ -238,6 +239,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/libcamera.so:/system/lib/libcamera.so \
     vendor/motorola/droid2/proprietary/libnmea.so:/system/lib/libnmea.so \
     vendor/motorola/droid2/proprietary/libril_rds.so:/system/lib/libril_rds.so \
+    vendor/motorola/shadow/proprietary/librds_util.so:/system/lib/librds_util.so \
     vendor/motorola/droid2/proprietary/libgps_rds.so:/system/lib/libgps_rds.so \
     vendor/motorola/droid2/proprietary/libsmiledetect.so:/system/lib/libsmiledetect.so \
     vendor/motorola/droid2/proprietary/libarcsoft.so:/system/lib/libarcsoft.so

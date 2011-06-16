@@ -1,65 +1,49 @@
 #!/system/bin/sh
-# 
-# loadpreinstalls.sh - installs apps / does other kewl stuff
-# 
-# Copyright (C) 2010 Jared Rummler (JRummy16)
-# 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-# 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# 
+export PATH=/system/bin:$PATH
+PRELOAD_APP_DIR=/preinstall/app
+PRELOAD_HASH_DIR=/preinstall/md5
+DATA_HASH_DIR=/data/preinstall_md5
+PRELOAD_DONE_PROP=preinstall.done
+PRELOAD_LOG_FILE=$DATA_HASH_DIR/log.txt
 
-LIBERTY_DIR=/data/liberty/app
-CONTROL_FILE=/data/liberty/init.d.conf
-HELPERS=/system/etc/script.helpers
-INSTALL_FROM_SD=/mnt/sdcard/liberty/install_apps
+mkdir $DATA_HASH_DIR
 
-. $CONTROL_FILE
-. $HELPERS
+for file in `ls $PRELOAD_APP_DIR`; do
+    echo "$file: comparing $PRELOAD_HASH_DIR/$file.md5 and $DATA_HASH_DIR/$file.md5"
+    echo "$file: comparing $PRELOAD_HASH_DIR/$file.md5 and $DATA_HASH_DIR/$file.md5" >> $PRELOAD_LOG_FILE
+    newMD5=`cat $PRELOAD_HASH_DIR/$file.md5`
+    oldMD5=`cat $DATA_HASH_DIR/$file.md5`
+    if [ "$newMD5" != "$oldMD5" ]; then
+        pm install -r $PRELOAD_APP_DIR/$file
+        ret=$?
+        if [ $ret -ne 0 ]; then
+            echo "$file: install failed, error: $ret"
+            echo "$file: install failed, error: $ret" >> $PRELOAD_LOG_FILE
+        else
+            echo "$file: install successful, copying $file.md5 to $DATA_HASH_DIR"
+            echo "$file: install successful, copying $file.md5 to $DATA_HASH_DIR" >> $PRELOAD_LOG_FILE
+            cp $PRELOAD_HASH_DIR/$file.md5 $DATA_HASH_DIR
+        fi
+    else
+        echo "$file: install skipped, file unchanged"
+        echo "$file: install skipped, file unchanged" >> $PRELOAD_LOG_FILE
+    fi
+done
 
-# Set install location
-pm setInstallLocation $APP_INSTALL_LOCATION
-echo "Set install location to "$(pm getInstallLocation | sed -e 's|^..||' -e 's|.$||')"" | tee -a $LOG_FILE
+retries=10
+echo "preinstall finished, setting $PRELOAD_DONE_PROP to 1"
+echo "preinstall finished, setting $PRELOAD_DONE_PROP to 1" >> $PRELOAD_LOG_FILE
+setprop $PRELOAD_DONE_PROP 1
+readback=`getprop $PRELOAD_DONE_PROP`
+while [ "$readback" != "1" -a $retries -gt 0 ]
+do
+    echo "  property readback failed! expected 1, got $readback. retries left $retries..."
+    echo "  property readback failed! expected 1, got $readback. retries left $retries..." >> $PRELOAD_LOG_FILE
+    retries=$(($retries-1))
+    sleep 2
+    setprop $PRELOAD_DONE_PROP 1
+    readback=`getprop $PRELOAD_DONE_PROP`
+done
 
-# Install apps
-installApps -r $LIBERTY_DIR
-
-# Unzip files
-unzipFilesInDir /system/etc/animations
-unzipFilesInDir /system/etc/icons
-
-# Setup hacked adb
-if test -e /system/bin/adbd; then
-	sysrw
-	echo "Set new adbd" | tee -a $LOG_FILE
-	busybox mount -orw,remount / 
-	mv /sbin/adbd /sbin/adbd.old 
-	busybox cp /system/bin/adbd /sbin/adbd 
-	busybox mount -oro,remount / 
-	if test ! -z "$(ps | grep adbd)"; then
-		busybox kill $(ps | grep adbd) 
-	fi
-fi
-
-# Wait for sdcard to mount & install apps on sd
-waitForSD
-installApps $INSTALL_FROM_SD
-
-# remove old toolbox installed by themes:
-toolbox=`ls system/app | grep -i libertytoolbox`
-if test -n "$toolbox"; then
-	busybox mount -o remount,rw /system
-	busybox rm -f /system/app/$toolbox
-fi
-
-# Check for automatic updates
-getAutomaticUpdates
+echo "preinstall exiting..."
+echo "preinstall exiting..." >> $PRELOAD_LOG_FILE

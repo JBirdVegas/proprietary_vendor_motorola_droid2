@@ -22,7 +22,7 @@ PRODUCT_COPY_FILES := \
     vendor/motorola/droid2/proprietary/libgps_rds.so:obj/lib/libgps_rds.so \
     vendor/motorola/droid2/proprietary/libnmea.so:obj/lib/libnmea.so \
     vendor/motorola/droid2/proprietary/libril_rds.so:obj/lib/libril_rds.so \
-    vendor/motorola/shadow/proprietary/librds_util.so:obj/lib/librds_util.so \
+    vendor/motorola/droid2/proprietary/librds_util.so:obj/lib/librds_util.so \
     vendor/motorola/droid2/proprietary/libsmiledetect.so:obj/lib/libsmiledetect.so \
     vendor/motorola/droid2/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so
 
@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/ProgramMenu.apk:/system/app/ProgramMenu.apk \
     vendor/motorola/droid2/proprietary/ProgramMenuSystem.apk:/system/app/ProgramMenuSystem.apk \
 
-# All the blobs necessary for d2
+# All the blobs necessary for droid2
 PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/Hostapd:/system/bin/Hostapd \
     vendor/motorola/droid2/proprietary/SaveBPVer:/system/bin/SaveBPVer \
@@ -239,14 +239,13 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/libcamera.so:/system/lib/libcamera.so \
     vendor/motorola/droid2/proprietary/libnmea.so:/system/lib/libnmea.so \
     vendor/motorola/droid2/proprietary/libril_rds.so:/system/lib/libril_rds.so \
-    vendor/motorola/shadow/proprietary/librds_util.so:/system/lib/librds_util.so \
+    vendor/motorola/droid2/proprietary/librds_util.so:/system/lib/librds_util.so \
     vendor/motorola/droid2/proprietary/libgps_rds.so:/system/lib/libgps_rds.so \
     vendor/motorola/droid2/proprietary/libsmiledetect.so:/system/lib/libsmiledetect.so \
     vendor/motorola/droid2/proprietary/libarcsoft.so:/system/lib/libarcsoft.so \
     vendor/motorola/droid2/proprietary/cdma_droid2-keypad.kcm.bin:/system/usr/keychars/cdma_droid2-keypad.kcm.bin \
-    vendor/motorola/droid2/proprietary/cdma_droid2-keypad.kl:/system/usr/keylayout/cdma_droid2-keypad.kl \
+    vendor/motorola/droid2/proprietary/cdma_droid2-keypad.kl:/system/usr/keychars/cdma_droid2-keypad.kl \
     vendor/motorola/droid2/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \
     vendor/motorola/droid2/proprietary/qwerty2.kcm.bin:/system/usr/keychars/qwerty2.kcm.bin \
-    vendor/motorola/droid2/proprietary/gps.droid2.so:/system/lib/hw/gps.droid2.so
-
+    vendor/motorola/droid2/proprietary/gps.droid2.so:/system/lib/hw/gps.droid2.so \
 

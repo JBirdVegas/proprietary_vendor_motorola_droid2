@@ -248,8 +248,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \
     vendor/motorola/droid2/proprietary/qwerty2.kcm.bin:/system/usr/keychars/qwerty2.kcm.bin \
     vendor/motorola/droid2/proprietary/gps.droid2.so:/system/lib/hw/gps.droid2.so \
-    vendor/motorola/droid2/proprietary/libSR_AudioIn.so:/system/lib/libSR_AudioIn.so \
-    vendor/motorola/droid2/proprietary/liba2dp.so:/system/lib/liba2dp.so \
-    vendor/motorola/droid2/proprietary/libaudioeffect_jni.so:/system/lib/libaudioeffect_jni.so \
-    vendor/motorola/droid2/proprietary/libaudioflinger.so:/system/lib/libaudioflinger.so \
-    vendor/motorola/droid2/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so
+    vendor/motorola/droid2/proprietary/libSR_AudioIn.so:/system/lib/libSR_AudioIn.so     vendor/motorola/droid2/proprietary/liba2dp.so:/system/lib/liba2dp.so     vendor/motorola/droid2/proprietary/libaudioeffect_jni.so:/system/lib/libaudioeffect_jni.so     vendor/motorola/droid2/proprietary/libaudioflinger.so:/system/lib/libaudioflinger.so     vendor/motorola/droid2/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so
+
+

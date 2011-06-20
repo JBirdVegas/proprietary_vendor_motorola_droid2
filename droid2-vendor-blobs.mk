@@ -235,7 +235,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/run_backup:/system/xbin/run_backup \
     vendor/motorola/droid2/proprietary/run_restore:/system/xbin/run_restore \
     vendor/motorola/droid2/proprietary/ssmgrd:/system/xbin/ssmgrd \
-    vendor/motorola/droid2/proprietary/libaudio.so:/system/lib/libaudio.so \
     vendor/motorola/droid2/proprietary/libcamera.so:/system/lib/libcamera.so \
     vendor/motorola/droid2/proprietary/libnmea.so:/system/lib/libnmea.so \
     vendor/motorola/droid2/proprietary/libril_rds.so:/system/lib/libril_rds.so \
@@ -248,6 +247,12 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \
     vendor/motorola/droid2/proprietary/qwerty2.kcm.bin:/system/usr/keychars/qwerty2.kcm.bin \
     vendor/motorola/droid2/proprietary/gps.droid2.so:/system/lib/hw/gps.droid2.so \
-    vendor/motorola/droid2/proprietary/libSR_AudioIn.so:/system/lib/libSR_AudioIn.so     vendor/motorola/droid2/proprietary/liba2dp.so:/system/lib/liba2dp.so     vendor/motorola/droid2/proprietary/libaudioeffect_jni.so:/system/lib/libaudioeffect_jni.so     vendor/motorola/droid2/proprietary/libaudioflinger.so:/system/lib/libaudioflinger.so     vendor/motorola/droid2/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so
-
+    vendor/motorola/droid2/proprietary/libSR_AudioIn.so:/system/lib/libSR_AudioIn.so \
+    vendor/motorola/droid2/proprietary/liba2dp.so:/system/lib/liba2dp.so \
+    vendor/motorola/droid2/proprietary/libaudioeffect_jni.so:/system/lib/libaudioeffect_jni.so \
+    vendor/motorola/droid2/proprietary/libaudioflinger.so:/system/lib/libaudioflinger.so \
+    vendor/motorola/droid2/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so \
+    vendor/motorola/droid2/proprietary/sensors.droid2.so:/system/lib/hw/sensors.droid2.so \
+    vendor/motorola/droid2/proprietary/lights.droid2.so:/system/lib/hw/lights.droid2.so \
+    vendor/motorola/droid2/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl
 

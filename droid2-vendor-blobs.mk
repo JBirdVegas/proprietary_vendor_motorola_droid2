@@ -254,5 +254,6 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so \
     vendor/motorola/droid2/proprietary/sensors.droid2.so:/system/lib/hw/sensors.droid2.so \
     vendor/motorola/droid2/proprietary/lights.droid2.so:/system/lib/hw/lights.droid2.so \
-    vendor/motorola/droid2/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl
+    vendor/motorola/droid2/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl \
+    vendor/motorola/droid2/proprietary/libaudio.so:/system/lib/libaudio.so
 

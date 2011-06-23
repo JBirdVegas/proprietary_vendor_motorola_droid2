@@ -256,4 +256,10 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/lights.droid2.so:/system/lib/hw/lights.droid2.so \
     vendor/motorola/droid2/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl \
     vendor/motorola/droid2/proprietary/libaudio.so:/system/lib/libaudio.so
+    vendor/motorola/droid2/proprietary/libVendor_ti_omx.so:/system/lib/libVendor_ti_omx.so \
+    vendor/motorola/droid2/proprietary/libVendor_ti_omx_config_parser.so:/system/lib/libVendor_ti_omx_config_parser.so \
+    vendor/motorola/droid2/proprietary/libstagefright.so:/system/lib/libstagefright.so \
+    vendor/motorola/droid2/proprietary/01_Vendor_ti_omx.cfg:/system/etc/01_Vendor_ti_omx.cfg \
+    vendor/motorola/droid2/proprietary/cameraCalFileDef.bin:/system/etc/cameraCalFileDef.bin \
+    vendor/motorola/droid2/proprietary/media_profiles.xml:/system/lib/media_profiles.xml
 

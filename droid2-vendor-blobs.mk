@@ -260,6 +260,5 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/droid2/proprietary/libVendor_ti_omx_config_parser.so:/system/lib/libVendor_ti_omx_config_parser.so \
     vendor/motorola/droid2/proprietary/libstagefright.so:/system/lib/libstagefright.so \
     vendor/motorola/droid2/proprietary/01_Vendor_ti_omx.cfg:/system/etc/01_Vendor_ti_omx.cfg \
-    vendor/motorola/droid2/proprietary/Usb.apk:/system/app/Usb.apk \
-    vendor/motorola/droid2/proprietary/cameraCalFileDef.bin:/system/etc/cameraCalFileDef.bin
+    vendor/motorola/droid2/proprietary/cameraCalFileDef.bin:/system/etc/cameraCalFileDef.bin \
 
